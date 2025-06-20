@@ -29,11 +29,11 @@ jobs:
 
       - name: Verify the build
 #        run: mvn -B package --file pom.xml
-        run: ./mvnw verify
+        run: mvn verify
 
       - name: Build and Publish Docker Image
         run:  |
-          ./mvnw clean package jib:build -DskipTests
+          mvn clean package jib:build -DskipTests
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD}}
           docker push ${{ secrets.DOCKER.USERNAME }}/bookmarkerapp
 
