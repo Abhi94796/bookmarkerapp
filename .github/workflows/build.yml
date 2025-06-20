@@ -33,7 +33,7 @@ jobs:
 
       - name: Build and Publish Docker Image
         run:  |
-          mvn clean package jib:build -DskipTests
+          mvn clean package jib:dockerBuild -DskipTests
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD}}
           docker push ${{ secrets.DOCKER.USERNAME }}/bookmarkerapp
 
