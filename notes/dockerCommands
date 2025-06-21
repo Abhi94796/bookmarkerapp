@@ -1,0 +1,32 @@
+docker-compose up                           -> will up the container and use the docker-compose.yml as default file
+docker-compose stop                         -> will stop the container which uses the docker-compose.yml as default file
+docker-compose -f docker-compose-app        -> will use the file (to up the container) that is specified in docker-compose-app.yml file
+docker-compose -d                           -> up the container in detached mode i.e, we will be able to run the other commands in the terminal
+docker-compose up -d --build                -> will forceful build the image of the docker and up it
+docker-compose logs -f                      -> will show the logs of the container in docker-compose.yml file
+
+command used to up both the containers(db and app) :
+docker-compose -f docker-compose.yml -f docker-compose-app.yml up -d --build        #forcefully build and up containers
+docker-compose -f docker-compose.yml -f docker-compose-app.yml logs -f              #tails the logs of docker images specified in the arguments
+docker-compose -f docker-compose.yml -f docker-compose-app.yml stop                 #stops the server of docker images specified in the arguments
+
+
+
+use run.sh                                  -> to run the rest of the commands
+Example: ./run.sh start_db
+
+
+
+
+
+
+
+
+*** Required Software installation links ***
+SDKMAN: https://sdkman.io/
+NodeJS: https://nodejs.org/
+Docker and DockerCompose: https://docs.docker.com/engine/install/
+Kubectl https://kubernetes.io/docs/tasks/tools/
+Kind https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbmt4OWhSNXJWZnVESUdfMEhUeFF6NzFTdlBWZ3xBQ3Jtc0trNTdvTHhOUklwT3hkTjlvWXFsMHJqX2RMQTFhcUI1TkdGbFYwXzQ1MzhMcWFkSS1DQnFyZDhBd09CUDU2SDhxRENvbGNfY2ZhbnNoelpNeERHUzNLekZ1REcwLTZvTm9UV3N2NnJHdnZuQS1vVi1LVQ&q=https%3A%2F%2Fkind.sigs.k8s.io%2Fdocs%2Fuser%2Fquick-start%2F&v=7UAqzQsSPEQ
+Lens https://k8slens.dev/
+Spring Initializer https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbGs1U2FtNVhyZHNoSm44NGx4VExXdTZPdjZ2d3xBQ3Jtc0tuZTlYRUp0SWk4WTdFV1BDTThENkVoUmp0MGMzUWszQlVfdzB3d3ZZTUhNRVA5bzhLU29sTVllYmlWR0tzRkJ2dUNnTzZxWk9vZTJ3ZXNxc2lqaUNKT3drVDZqZlJaQVFYdkdwSmVHYmhfdlVUN01WYw&q=https%3A%2F%2Fstart.spring.io%2F%23%21type%3Dmaven-project%26language%3Djava%26platformVersion%3D2.7.0%26packaging%3Djar%26jvmVersion%3D17%26groupId%3Dcom.sivalabs%26artifactId%3Dbookmarker-api%26name%3Dbookmarker-api%26description%3DDemo%2520project%2520for%2520Spring%2520Boot%26packageName%3Dcom.sivalabs.bookmarker%26dependencies%3Ddevtools%2Clombok%2Cconfiguration-processor%2Cweb%2Cactuator%2Ctestcontainers%2Cdata-jpa%2Cflyway%2Ch2%2Cpostgresql%2Cvalidation&v=7UAqzQsSPEQ
